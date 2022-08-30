@@ -33,6 +33,7 @@ for i in range(N):
         for lines in a:
             store.append(lines)
             wr.write(f"{lines}\n")
+            #wr.write("%s\n" % lines)                   #use this for older python versions
 two=time.time()
 for elem in store:
     if elem not in new_k:
