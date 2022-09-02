@@ -43,6 +43,7 @@ with open('data_unique_100steps_5000.txt','w') as f:
     for lines in store:
         lines = str(lines)[1:-1]
         f.write("%s\n" % lines)
+        #wr.write(f"{lines}\n")
 print(*store, sep="\n")
 print("Time taken to complete {} runs:".format(n),two-one)
 
