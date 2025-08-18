@@ -1,20 +1,22 @@
 import numpy as np
 
+def generate_hadamard_matrix(n):
+    """Generate Hadamard matrix of size 2^n."""
+    H = [[1, 1], [1, -1]]
+    result = H
+    for _ in range(n - 1):
+        result = np.kron(result, H)
+    return result
 
-H=[[1,1],[1,-1]]
+# Input: n (number of iterations for Hadamard matrix generation)
+n = int(input("Enter the value of n (e.g., 1, 2, 3, ...): "))
+H_n = generate_hadamard_matrix(n)
 
-H2=np.kron(H,H)
-H4=np.kron(H2,H2)
-H6=np.kron(H4,H2)
-H8=np.kron(H6,H2)
-H10=np.kron(H8,H2)
-#print(*H2, sep="\n")
-#print(H2[1][3])
-n=len(H10)                             #size of matrix
-#with open("J_ij.txt" as w):
-#print(len(H2))
-with open("J_ij_.{}.txt".format(n) ,"w") as f:
-    for i in range(n):
-        for j in range(n):
-            #print(i+1,' ',j+len(H2)+1,' ', H2[i][j])
-            f.write(str(i+1)+ ' ' + str(j+n+1)+' '+ str(H10[i][j]) + "\n" )
+size = len(H_n)  # Size of the matrix
+output_filename = f"J_Matrix_2x{size}.txt"
+
+# Write the matrix to a file
+with open(output_filename, "w") as f:
+    for i in range(size):
+        for j in range(size):
+            f.write(f"{i + 1} {j + size + 1} {H_n[i][j]}\n")
