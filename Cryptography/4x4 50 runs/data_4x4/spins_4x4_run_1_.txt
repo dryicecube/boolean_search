@@ -1,0 +1,5 @@
+-1	-1	1	1	-1	1	1	1	1	-1	1	1	-1	-1	-1	1	
+
+
+	total energy value: -10.000000
+	best max cut value: 2.000000
