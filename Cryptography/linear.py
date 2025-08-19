@@ -1,6 +1,6 @@
 #create J_ij matrix
-lattice_width = input("Enter the lattice width (e.g., 2, 4, 8, ...): ")
-lattice_width = int(lattice_width)
+lattice_width = int(input("Enter the lattice width (e.g., 2, 4, 8, ...): "))
+lattice_width = int(2**lattice_width)
 filename_2xn = "linear_2x{}.txt".format(lattice_width)
 
 
